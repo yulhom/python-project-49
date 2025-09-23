@@ -4,7 +4,7 @@ brain-games:
 	uv run brain-games
 build:
 	uv build
- package-install:
+package-install:
 	uv tool install dist/*.whl
 
 lint:
