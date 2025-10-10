@@ -8,33 +8,30 @@ MAX_GENERATOR_NUM = 100
 
 ATTEMPTS = 3
 
-OPTIONS = ('+', '-', '*')
+
+def gcd_number(a, b):
+    
+    if b == 0:
+        return a
+    r = a % b
+    while b != 0:
+        r = a % b
+        a, b = b, r   
+    return a 
 
 
-def calc_number(number1, number2, operation):
-    
-    if operation == '+': 
-        result = number1 + number2
-    elif operation == '-':
-        result = number1 - number2
-    elif operation == '*':
-        result = number1 * number2
-    return result   
-    
-        
-def run_calc_game():
+def run_gcd_game():
     
     print('Welcome to the Brain Games')
-    name = prompt.string('May i have your name? ')
+    name = prompt.string('May i have your name?')
     print(f'Hello, {name}!')
-    print('What is the result of the expression?')
+    print('Find the greatest common divisor of given numbers.')
     for i in range(ATTEMPTS):
         number1 = random.randint(MIN_GENERATOR_NUM, MAX_GENERATOR_NUM)
         number2 = random.randint(MIN_GENERATOR_NUM, MAX_GENERATOR_NUM)
-        operation = random.choice(OPTIONS)
-        print(f'Question: {number1} {operation} {number2}')
+        print(f'Question: {number1} {number2}')
         answer = prompt.string('Your answer: ')
-        real_answer = calc_number(number1, number2, operation) 
+        real_answer = gcd_number(number1, number2)
         
         if int(answer) == real_answer:
             print('Correct')
@@ -45,4 +42,4 @@ def run_calc_game():
             print(f"Let's try again, {name}!")
             return
         
-    print(f"Congratulations, {name}!")        
+    print(f"Congratulations, {name}!")
