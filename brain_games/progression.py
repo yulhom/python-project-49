@@ -4,6 +4,18 @@ import prompt
 
 ATTEMPTS = 3
 
+MIN_GENERATION_INDEX = -10
+
+MAX_GENERATION_INDEX = 10
+
+MIN_GENERATION_LEN = 5
+
+MAX_GENERATION_LEN = 10
+
+MIN_GENERATION_NUM = 1
+
+MAX_GENERATION_NUM = 10
+
 
 def progression_numbers(a1, d, progression_len):
     
@@ -21,9 +33,10 @@ def run_progression():
     print(f'Hello, {name}!')
     print('What number is missing in the progression?')
     for _ in range(ATTEMPTS):
-        d = random.randint(-10, 10)
-        progression_len = random.randint(5, 10)
-        a1 = random.randint(1, 10)
+        
+        d = random.randint(MIN_GENERATION_INDEX, MAX_GENERATION_INDEX)
+        progression_len = random.randint(MIN_GENERATION_LEN, MAX_GENERATION_LEN)
+        a1 = random.randint(MIN_GENERATION_NUM, MAX_GENERATION_NUM)
         numbers = progression_numbers(a1, d, progression_len)
         skip_idx = random.randint(0, progression_len - 1)
         real_answer = numbers[skip_idx]
