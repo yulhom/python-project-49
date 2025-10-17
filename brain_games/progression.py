@@ -5,6 +5,15 @@ import prompt
 ATTEMPTS = 3
 
 
+def progression_numbers(a1, d, progression_len):
+    
+    numbers = []
+    for i in range(progression_len):
+        an = a1 + i * d
+        numbers.append(an)
+    return numbers
+
+
 def run_progression():
     
     print('Welcome to the Brain Games')
@@ -15,10 +24,7 @@ def run_progression():
         d = random.randint(-10, 10)
         progression_len = random.randint(5, 10)
         a1 = random.randint(1, 10)
-        numbers = []
-        for i in range(progression_len): 
-            an = a1 + i * d
-            numbers.append(an)
+        numbers = progression_numbers(a1, d, progression_len)
         skip_idx = random.randint(0, progression_len - 1)
         real_answer = numbers[skip_idx]
         numbers[skip_idx] = '..'
