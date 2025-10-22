@@ -5,6 +5,8 @@ MIN_GENERATOR_NUM = 1
 MAX_GENERATOR_NUM = 100
 
 DESCRIPTION = 'Find the greatest common divisor of given numbers.'
+
+
 def gcd_number(a, b):
     
     if b == 0:
