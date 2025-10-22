@@ -1,9 +1,10 @@
-from brain_games.progression import run_progression
+from brain_games.engine import run 
+from brain_games.games.progression import DESCRIPTION, generate_question_and_answer
     
     
 def main():
     
-    run_progression()
+    run(DESCRIPTION, generate_question_and_answer)
     
 
 if __name__ == '__main__':
