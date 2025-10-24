@@ -1,7 +1,10 @@
-from brain_games.engine import run 
-from brain_games.games.progression import DESCRIPTION, generate_question_and_answer
-    
-    
+from brain_games.engine import run
+from brain_games.games.progression import (
+    DESCRIPTION,
+    generate_question_and_answer,
+)
+
+
 def main():
     
     run(DESCRIPTION, generate_question_and_answer)
