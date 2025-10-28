@@ -11,7 +11,6 @@ def gcd_number(a, b):
     
     if b == 0:
         return a
-    r = a % b
     while b != 0:
         r = a % b
         a, b = b, r   
