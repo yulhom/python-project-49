@@ -1,5 +1,7 @@
 import random
 
+from brain_games.boolean import format_boolean
+
 DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 MIN_GENERATOR_NUM = 1
@@ -9,14 +11,7 @@ MAX_GENERATOR_NUM = 100
 
 def is_even(number):
       
-    return number % 2 == 0
-
-
-def format_boolean(val):
-    
-    if val:
-        return 'yes'   
-    return 'no'     
+    return number % 2 == 0    
 
 
 def generate_question_and_answer():

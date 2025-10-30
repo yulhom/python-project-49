@@ -1,5 +1,7 @@
 import random
 
+from brain_games.boolean import format_boolean
+
 DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 MIN_GENERATOR_NUM = 1
@@ -15,13 +17,6 @@ def prime(num):
         if num % i == 0:
             return False
     return True
-
-
-def format_boolean(val):
-    if val:
-        return 'yes'
-    else:
-        return 'no'
 
 
 def generate_question_and_answer():
